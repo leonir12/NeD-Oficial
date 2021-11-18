@@ -60,6 +60,6 @@ class CadastrosController {
     }    
 }
 
-//teste da nova branch
+//novo teste
 
 module.exports = CadastrosController
