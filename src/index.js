@@ -11,6 +11,7 @@ app.listen(PORTA, function () {
 })
 
 
+
 app.use('/publico', express.static(__dirname + '/src/publico'));
 app.use('/bsjs', express.static('./node_modules/bootstrap/dist/js'));
 app.use('/popperjs', express.static('./node_modules/@popperjs/core/dist/umd'));
