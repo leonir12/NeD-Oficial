@@ -27,6 +27,9 @@ app.use('/bscss', express.static('./node_modules/bootstrap/dist/css'));
 
  /*app.get('/album', (req, res) => res.sendFile(path.join(__dirname,'src/views/form-album-digital.html')));*/
 
+ app.set('views',path.join(__dirname,'/views'))
+ app.set('view engine','pug')
+
 /**
  * Rotas
  */
