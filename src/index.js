@@ -44,7 +44,7 @@ app.listen(PORTA, function () {
 
 
 
-app.use('/publico', express.static(__dirname + '/src/publico'));
+app.use('/publico', express.static(__dirname + '/publico'));
 app.use('/uploads', express.static('./uploads'));
 app.use('/bsjs', express.static('./node_modules/bootstrap/dist/js'));
 app.use('/popperjs', express.static('./node_modules/@popperjs/core/dist/umd'));
@@ -53,7 +53,8 @@ app.use('/bscss', express.static('./node_modules/bootstrap/dist/css'));
 
 
 
- /*app.get('/album', (req, res) => res.sendFile(path.join(__dirname,'src/views/form-album-digital.html')));*/
+app.get('/album', (req, res) => res.sendFile(path.join(__dirname,'/views/form-album-digital.html')));
+app.get('/login', (req, res) => res.sendFile(path.join(__dirname,'/views/login.html')));
 
  app.set('views',path.join(__dirname,'/views'))
  app.set('view engine','pug')
