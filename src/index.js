@@ -55,6 +55,16 @@ app.use('/bscss', express.static('./node_modules/bootstrap/dist/css'));
 
 app.get('/album', (req, res) => res.sendFile(path.join(__dirname,'/views/form-album-digital.html')));
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname,'/views/login.html')));
+app.get('/index', (req, res) => res.sendFile(path.join(__dirname,'/views/index.html')));
+app.get('/nossaEquipe', (req, res) => res.sendFile(path.join(__dirname,'/views/nossaEquipe.html')));
+
+
+/**
+ * Requisição - Upload de arquivos
+ */
+ app.post('/uploadFoto',upload.single('nomeFoto'),function(req, resp){
+    resp.end();
+});
 
  app.set('views',path.join(__dirname,'/views'))
  app.set('view engine','pug')
@@ -64,5 +74,9 @@ app.get('/login', (req, res) => res.sendFile(path.join(__dirname,'/views/login.h
  */
  const routes = require('./routes');
  routes(app);
+
+ app.post('/cadastros',function(req, resp){
+    resp.sendFile(__dirname + '/views/form-album-digital.html');
+});
  
  
